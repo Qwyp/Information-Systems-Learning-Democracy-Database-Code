@@ -1,0 +1,27 @@
+Please work on user stories-3 I am working on user story -2 
+
+/***********************************************************************/
+//Update fields name:
+
+db.getCollection('Parties').update({"pople": {$exists : true}}, {$rename:{"pople":"people"}}, false, true);
+
+
+//Get the data from referenced collection
+//Below is the generic query to get data from referenced collection. you need to filter out the data follow below link for help or other source.
+
+https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#use-lookup-with-an-array
+
+db.getCollection('Foundation').aggregate([
+   {
+     $lookup:
+       {
+         from: "PeopleAll",
+         localField: "People",
+         foreignField: "_id",
+         as: "peopleDetails"
+       }
+  }
+])
+
+//This query works on commandline.
+//In command line you need to go to the bin folder and then run mongo.exe. go to the database and run the command.

@@ -1,0 +1,111 @@
+// Constrain uniquness
+
+db.getCollection('Election').createIndex( { "Title" : 1 }, { unique : true } );
+
+/*Document Insert Query:*/
+
+db.getCollection('Election').insertOne(
+   { 
+		"Title" : "Democratic Election",
+    "Detail" : {
+        "Text" : "",
+        "Video" : [],
+        "Images" : []
+    },
+    "People" : [        
+        ObjectId("5cfe33abf93d3a159212b634")
+    ],
+    "Political_Parties" : [ 
+        {
+            "party" : ObjectId("5cfbd73686186128f8a0204f"),
+            "seats" : 140
+        }, 
+        {
+            "party" : ObjectId("5cfbd5f386186128f8a01ff3"),
+            "seats" : 130
+        }
+    ],
+    "Attendees" : "90%",
+    "Ruleset" : "Elections are to be universal, direct, free, equal, and secret. The German Basic Law stipulates that Bundestag elections are to take place every four years. One can vote, and be elected, upon reaching the age of 18.",
+    "Aftermath" : "Schumacher had explicitly refused a grand coalition and led his party into opposition, where it would remain until December 1966 assuming the chair of the SPD parliamentary group as minority leader. On 12 September 1949, he lost the german presidential election , defeated by FDP chairman in the second ballot. Schumacher died on 20 August 1952 of the long-term consequences of his concentration camp imprisonment during the Nazi years. Adenauer had favored the formation of a smaller Centre-right coalition from the beginning. Nominated by the CDU/CSU faction, he was elected the first chancellor of federal republic of Germany on 15 September 1949 by an absolute majority of 202 of 402 votes. Adenauer had ensured that the votes of the predominantly Social Democrat West Berlin deputies did not count and later stated that he (naturally) had voted for himself. On 20 September, he formed the Cabinet Adenauer I of CDU/CSU, FDP, and DP ministers. Chosen as an interim Chancellor, he held the office until 1963, being re-elected three times (in 1953, in 1957 and in 1961).",
+    "Living_Condition" : "Female suffrage was not proposed because politics was considered a male preserved at the time. Education was not compulsory. women empowerment was merely found by then. Working class advocacy. non-denominational and humanist Christian democracy. Social market economy.",
+    
+   }
+);
+
+/*Result:*/
+
+{
+  "_id" : ObjectId("5d025ab9abe7e0c44c966339"),
+  "Title" : "Democratic Election",
+  "Detail" : {
+      "Text" : "",
+      "Video" : [],
+      "Images" : []
+  },
+  "People" : [ 
+      ObjectId("5cfe33abf93d3a159212b634")
+  ],
+  "Political_Parties" : [ 
+      {
+          "party" : ObjectId("5cfbd73686186128f8a0204f"),
+          "seats" : 140.0
+      }, 
+      {
+          "party" : ObjectId("5cfbd5f386186128f8a01ff3"),
+          "seats" : 130.0
+      }
+  ],
+  "Attendees" : "90%",
+  "Ruleset" : "Elections are to be universal, direct, free, equal, and secret. The German Basic Law stipulates that Bundestag elections are to take place every four years. One can vote, and be elected, upon reaching the age of 18.",
+  "Aftermath" : "Schumacher had explicitly refused a grand coalition and led his party into opposition, where it would remain until December 1966 assuming the chair of the SPD parliamentary group as minority leader. On 12 September 1949, he lost the german presidential election , defeated by FDP chairman in the second ballot. Schumacher died on 20 August 1952 of the long-term consequences of his concentration camp imprisonment during the Nazi years. Adenauer had favored the formation of a smaller Centre-right coalition from the beginning. Nominated by the CDU/CSU faction, he was elected the first chancellor of federal republic of Germany on 15 September 1949 by an absolute majority of 202 of 402 votes. Adenauer had ensured that the votes of the predominantly Social Democrat West Berlin deputies did not count and later stated that he (naturally) had voted for himself. On 20 September, he formed the Cabinet Adenauer I of CDU/CSU, FDP, and DP ministers. Chosen as an interim Chancellor, he held the office until 1963, being re-elected three times (in 1953, in 1957 and in 1961).",
+  "Living_Condition" : "Female suffrage was not proposed because politics was considered a male preserved at the time. Education was not compulsory. women empowerment was merely found by then. Working class advocacy. non-denominational and humanist Christian democracy. Social market economy."
+}
+
+/*Query: Update field in a document:*/
+db.getCollection('Election').update(
+  {"Title" : "Democratic Election"},
+  { $set: {"newField": 1} },
+  false,
+  true
+);
+
+/*Result:*/
+{  
+  "newField" : 1.0 //New field is added to the document.
+}
+
+/*Query Delete fields in a document:*/
+
+db.getCollection('Election').update(
+  {"Title" : "Democratic Election"}, //Condition to match specific document.
+  { $unset: {"newField": 1} },
+  false,
+  true
+);
+/*Query update Title:*/
+
+db.getCollection('Election').update(
+  {"Title" : "Democratic Election"}, //Condition to match specific document.
+  { $set: {"Title": "Democratic Election 1990"} },
+  false,
+  true
+);
+
+/*Result:*/
+{
+  "_id" : ObjectId("5d025ab9abe7e0c44c966339"),
+  "Title" : "Democratic Election 1990"
+}
+//In the above example last 2 fields false, true specifies the upsert and multi flags.
+
+//Upsert: If set to true, creates a new document when no document matches the query criteria.
+
+//Multi: If set to true, updates multiple documents that meet the query criteria. If set to false, updates one document.
+
+
+//Rename the fields.
+db.getCollection('Parties').update({"newField": {$exists : true}}, {$rename:{"newField":"UpdatedField"}}, false, true);
+
+//Remove a document in a collection.
+db.getCollection('Election').remove({"Title" : "Democratic Election"});

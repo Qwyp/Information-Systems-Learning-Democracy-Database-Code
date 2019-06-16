@@ -1,0 +1,21 @@
+// USer Story 1 with Description
+MATCH (event1:Events)-[r1:EVENT_START]->(year1:years),(event1)-[r2:EVENT_END]->(year2:years)
+RETURN event1.title AS `Events`, event1.description AS `Description`, year1.years AS `Year`, toString(r1.startdate) AS `Start Date`, toString(r2.endtdate) AS `End Date`, event1.mongoId AS `MongoDb ID` ORDER BY `Year`
+
+
+// USer Story 1 without Description
+MATCH (event1:Events)-[r1:EVENT_START]->(year1:years),(event1)-[r2:EVENT_END]->(year2:years)
+RETURN event1.title AS `Events`, year1.years AS `Year`, toString(r1.startdate) AS `Start Date`, toString(r2.endtdate) AS `End Date`, event1.mongoId AS `MongoDb ID` ORDER BY `Year`
+
+
+//User Story 2 (3 Layer)
+MATCH path=(p:Person)-[*1..2]-(e)-[]-(d:Person)
+WHERE p.mongoId = "5cfd8460f93d3a15921294e4"
+RETURN path
+
+
+//User Story 2 (2 Layer)
+MATCH path=(p:Person)-[*1]-(e)-[]-(d:Person)
+WHERE p.mongoId = "5cfd8460f93d3a15921294e4"
+RETURN path
+

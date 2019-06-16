@@ -1,0 +1,143 @@
+
+/*---------------------------------------------------------User Story 3--------------------------------------------------------------------------*/
+                                            Query for find one Event inside Revolution Topic:
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+Query:
+db.getCollection('Revolution').findOne({"Title" : "German Revolution 1848"}, {Title:1,Rule_Set:1,_id:0}).pretty();
+
+Result:
+{
+    "Title" : "Kapp Putsch or Kapp-Lüttwitz Putsch 1920",
+    "Rule_Set" : "Weimarer Constitution and during the time of the Putsch a military dictatorship"
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+Query to find one Event inside Constitution Topic
+db.getCollection('Constitution').findOne({"_id":ObjectId("5cfbca7c86186128f8a01d8d")}, {Title:1,Rule_Set:1,_id:0}).pretty();
+
+Query to find one Event inside Election Topic
+db.getCollection('Election').findOne({"_id":ObjectId("5cfe5f2d87783af44872fea0")}, {Title:1,Rule_Set:1,_id:0}).pretty();
+
+Query to find one Event inside Foundation Topic
+db.getCollection('Foundation').findOne({"_id":ObjectId("5cfd1249f93d3a15921281fd")}, {Title:1,Rule_Set:1,_id:0}).pretty();
+
+Query to find one Event inside Invocation Topic
+db.getCollection('Foundation').findOne({"_id":ObjectId("5cfd1249f93d3a15921281fd")}, {Title:1,Rule_Set:1,_id:0}).pretty();
+
+
+/*---------------------------------------------------------User Story 3.1------------------------------------------------------------------------*/
+
+                                                Query for Revolution topic to find Rule Sets:
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+Query:
+db.getCollection('Revolution').find({},{Rule_Set:1, _id:0, Title:1, Living_Condition:1}).pretty();
+
+Result:
+{
+    "Title" : "German Revolution 1848",
+    "Living_Condition" : "Most people suffer the indignity of serfdom or some elements of the system of forced labor. Around 90% of the population were peasants at that time",
+    "Rule_Set" : "Parliament, Monarchy, Deutscher Bund"
+}
+
+/* 2 */
+{
+    "Title" : "November Revolution 1918",
+    "Living_Condition" : "People were struggleing with the results of World War I",
+    "Rule_Set" : ""
+}
+
+/* 3 */
+{
+    "Title" : "Kapp Putsch or Kapp-Lüttwitz Putsch 1920",
+    "Living_Condition" : "Struggle with aftermath of World War I",
+    "Rule_Set" : "Weimarer Constitution and during the time of the Putsch a military dictatorship"
+}
+
+/* 4 */
+{
+    "Title" : "Beer Hall Putsch or Munich Putsch 1923",
+    "Living_Condition" : "People socialise the evenings while drinking beer and participate in social and political debates",
+    "Rule_Set" : "Parlamentary Democracy and the Weimar Constitution"
+}
+
+/* 5 */
+{
+    "Title" : "East German uprising 1953",
+    "Living_Condition" : "Government wants to react on the bad economy and plans to reduce payments for construction workers. Even holidays outse east Germany are not possible for the citizens, because it's hard to leave the country. But still a lot of people flee to western Germany, because they can't see perspectives in eastern Germany and feel unhappy there",
+    "Rule_Set" : "DDR Constitution inside a socialist state"
+}
+
+/* 6 */
+{
+    "Title" : "Monday demonstrations in eastern Germany 1989",
+    "Living_Condition" : "Citizens lived in a poor economy and living conditions were like in a third world country, during the demonstrations people felt enstrengthend and the Country started to become unable to control.",
+    "Rule_Set" : "DDR Constitution"
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+                                        Query to find several Events inside Invocation Topic
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+db.Invocation.find({Title:{$in:["Pan German League (1891)", "Potsdam Conference (1945)","Berlin wall (1961)"]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Result:
+{
+    "Title" : "Pan German League (1891)",
+    "Rule_Set" : "Emperorship "
+}
+
+/* 2 */
+{
+    "Title" : "Potsdam Conference (1945)",
+    "Rule_Set" : "The Allies issued a statement of aims of their occupation of Germany: demilitarization, denazification, democratization, decentralization, dismantling and decartelization."
+}
+
+/* 3 */
+{
+    "Title" : "Berlin wall (1961)",
+    "Rule_Set" : "The Wall restricted freedom of movement."
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+Query for Election topic to find Rule Sets:
+db.getCollection('Election').find({},{Ruleset:1, _id:0, Title:1}).pretty();
+
+Query for Constitution topic to find Rule Sets:
+db.getCollection('Constitution').find({},{Rule_Set:1, _id:0, Title:1}).pretty();
+
+Query for Invocation topic to find Rule Sets:
+db.getCollection('Invocation').find({},{Rule_Set:1, _id:0, Title:1}).pretty();
+
+Query for Foundation topic to find Rule Sets:
+db.getCollection('Foundation').find({},{Rule_Set:1, _id:0, Title:1}).pretty();
+
+Query to find several Events inside Revolution Topic
+db.Revolution.find({Title:{$in:[“Hambacher Fest 1832”, “German Revolution 1848”]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Query to find several Events inside Foundation Topic
+db.Foundation.find({Title:{$in:[“East Germany foundation (1949)”, “West Germany foundation (1949)”]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Query to find several Events inside Election Topic
+db.Election.find({Title:{$in:[“1949 German federal election”, “1932 German federal elections”]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Query to find several Events inside Constitution Topic
+db.Election.find({Title:{$in:[“The Constitution of German Reich”, “70Th birthday of basic rights.”]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Query to find several Events inside Revolution Topic with ObjectID
+db.Revolution.find({_id:{$in:[ObjectId("5cfb9f6a86186128f8a01a7b"), ObjectId("5cfbc35886186128f8a01c39")]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Query to find several Events inside Foundation Topic with ObjectID
+db.Foundation.find({_id:{$in:[ObjectId("5cfd10bef93d3a1592128088"), ObjectId("5cfd1249f93d3a15921281fd")]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Query to find several Events inside Invocation Topic with ObjectID
+db.Invocation.find({_id:{$in:[ObjectId("5cfd02d5f93d3a15921276b9"), ObjectId("5cfd068ff93d3a15921278d0"),ObjectId("5cfd0a41f93d3a1592127b51")]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Query to find several Events inside Election Topic with ObjectID
+db.Election.find({_id:{$in:[ObjectId("5cfe5f2d87783af44872fea0"), ObjectId("5cfe658d87783af44872ff31")]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Query to find several Events inside Constitution Topic with ObjectID
+db.Election.find({_id:{$in:[ObjectId("5cfe1cca87783af44872f903"), ObjectId("5cfbca7c86186128f8a01d8d")]}},{Title:1,Rule_Set:1,_id:0}).pretty()
+
+Generic Limiting
+db.getCollection('Revolution').find({},{Rule_Set:1, _id:0, Title:1}).limit(3).pretty();

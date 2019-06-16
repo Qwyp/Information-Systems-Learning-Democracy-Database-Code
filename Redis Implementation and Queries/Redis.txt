@@ -1,0 +1,60 @@
+HSET key field value:
+Sets field in the hash stored at key to value. If key does not exist, a new key holding a hash is created. If field already exists in the hash, it is overwritten.
+
+127.0.0.1:6379> hset "Hambacher Fest 2019" "Michelle Herbert" "michelle.herbert@gmail.com"
+(integer) 1
+127.0.0.1:6379> hset "Hambacher Fest 2019" "Sarah Christopher" "sarahchristoph@gmail.com"
+(integer) 1
+127.0.0.1:6379> hset "Hambacher Fest 2019" "Julia Jan"
+"julia.jan@outlook.com"
+(integer) 1
+
+
+HGETALL key:
+Returns all fields and values of the hash stored at key. In the returned value, every field name is followed by its value, so the length of the reply is twice the size of the hash.
+
+127.0.0.1:6379> hgetall "Hambacher Fest 2019"
+  1) "Michelle Herbert"
+  2) "michelle.herbert@gmail.com"
+  3) "Sarah Christopher"
+  4) "sarahchristoph@gmail.com"
+  5) "Julia Jan"
+  6) "julia.jan@outlook.com"
+
+
+HGET key field:
+Returns the value associated with field in the hash stored at key.
+
+127.0.0.1:6379> hget "Hambacher Fest 2019" "Julia Jan"
+"julia.jan@outlook.com"
+
+
+HKEYS key:
+Returns all field names in the hash stored at key.
+
+127.0.0.1:6379> hkeys "Hambacher Fest 2019"
+ 1) "Michelle Herbert"
+ 2) "Sarah Christopher"
+ 3) "Julia Jan"
+
+HVALS key:
+Returns all values in the hash stored at key.
+
+127.0.0.1:6379> hvals  "Hambacher Fest 2019"
+ 1) "michelle.herbert@gmail.com"
+ 2) "sarahchristoph@gmail.com"
+ 3) "julia.jan@outlook.com"
+
+
+HEXISTS key field:
+Returns if field is an existing field in the hash stored at key.
+
+127.0.0.1:6379> hexists "Hambacher Fest 2019"  "Julia Jan"
+(integer) 1
+
+
+HDEL key field [field ...]:
+Removes the specified fields from the hash stored at key. Specified fields that do not exist within this hash are ignored. If key does not exist, it is treated as an empty hash and this command returns 0.
+
+127.0.0.1:6379> hdel "Hambacher Fest 2019"  "Julia Jan"
+(integer) 1

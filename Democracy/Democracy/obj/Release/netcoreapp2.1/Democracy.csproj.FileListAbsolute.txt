@@ -1,0 +1,11 @@
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\Democracy.deps.json
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\Democracy.runtimeconfig.json
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\Democracy.runtimeconfig.dev.json
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\Democracy.dll
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\Democracy.pdb
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\Democracy.csprojAssemblyReference.cache
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\Democracy.csproj.CoreCompileInputs.cache
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\Democracy.AssemblyInfoInputs.cache
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\Democracy.AssemblyInfo.cs
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\Democracy.dll
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\Democracy.pdb

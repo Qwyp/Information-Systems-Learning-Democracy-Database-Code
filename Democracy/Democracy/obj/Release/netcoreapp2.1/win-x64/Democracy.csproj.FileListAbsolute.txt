@@ -1,0 +1,14 @@
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\win-x64\Democracy.deps.json
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\win-x64\Democracy.runtimeconfig.json
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\win-x64\Democracy.runtimeconfig.dev.json
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\win-x64\Democracy.dll
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\win-x64\Democracy.pdb
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\win-x64\Democracy.csproj.CoreCompileInputs.cache
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\win-x64\Democracy.AssemblyInfoInputs.cache
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\win-x64\Democracy.AssemblyInfo.cs
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\win-x64\Democracy.dll
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\win-x64\Democracy.pdb
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\win-x64\hostpolicy.dll
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\win-x64\hostfxr.dll
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\bin\Release\netcoreapp2.1\win-x64\Democracy.exe
+D:\Users\ASH-EE\Source\Repos\Democracy\Democracy\obj\Release\netcoreapp2.1\win-x64\Democracy.csprojAssemblyReference.cache

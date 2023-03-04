@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Bson" Version="2.8.1" />
-    <PackageReference Include="MongoDB.Driver" Version="2.8.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.8.1" />
     <PackageReference Include="Neo4j.Driver" Version="1.7.2" />
   </ItemGroup>
